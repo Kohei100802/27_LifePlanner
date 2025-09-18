@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" action="/reset" class="p-4 space-y-4">
+  {% if error %}
+  <div class="p-3 bg-red-50 text-red-700 rounded">{{ error }}</div>
+  {% endif %}
+  <input type="hidden" name="token" value="{{ token }}" />
+  <div class="space-y-2">
+    <label class="text-sm">新しいパスワード</label>
+    <input type="password" name="password" minlength="8" required class="w-full rounded border p-3" placeholder="8文字以上" />
+  </div>
+  <button class="w-full rounded bg-primary text-white py-3">パスワードを変更</button>
+</form>
+{% endblock %}
