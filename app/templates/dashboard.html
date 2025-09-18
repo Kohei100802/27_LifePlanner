@@ -28,3 +28,14 @@
   </div>
 </div>
 {% endblock %}
+
+{% block extra_js %}{% endblock %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const el = document.getElementById('chart');
+    if(!el) return;
+    const ctx = el.getContext('2d');
+    const data = {labels: ['20','25','30','35','40','45','50'], datasets: [{label: '資産(百万円)', data: [0.5,0.8,1.2,1.6,2.0,2.6,3.0], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.2)', tension: 0.3}]};
+    new Chart(ctx, { type: 'line', data, options: {responsive: true, maintainAspectRatio: false, plugins: {legend: {display: false}}, scales: {y: {beginAtZero: true}} }});
+  });
+</script>
