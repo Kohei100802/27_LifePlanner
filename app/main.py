@@ -9,6 +9,7 @@ from app.shared.config import settings
 from app.infra.db import Base, engine, get_db
 from app.features.auth import models as auth_models, service as auth_service, schemas as auth_schemas
 from app.features.auth import reset as reset_router
+from app.features.lifeplan import router as lifeplan_router
 
 app = FastAPI(title=settings.app_name)
 app.add_middleware(SessionMiddleware, secret_key=settings.secret_key)
@@ -95,3 +96,4 @@ async def settings_page(request: Request):
 
 # include password reset endpoints
 app.include_router(reset_router.router)
+app.include_router(lifeplan_router.router)
