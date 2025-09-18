@@ -8,11 +8,13 @@ from starlette.middleware.sessions import SessionMiddleware
 from app.shared.config import settings
 from app.infra.db import Base, engine, get_db
 from app.features.auth import models as auth_models, service as auth_service, schemas as auth_schemas
+from app.features.auth import reset as reset_router
 
 app = FastAPI(title=settings.app_name)
 app.add_middleware(SessionMiddleware, secret_key=settings.secret_key)
 
 templates = Jinja2Templates(directory="app/templates")
+app.state.templates = templates  # expose for routers
 
 # Static (Tailwind via CDN, so keep empty for now)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
@@ -89,3 +91,7 @@ async def lifeplan(request: Request):
 @app.get("/settings", response_class=HTMLResponse)
 async def settings_page(request: Request):
     return templates.TemplateResponse("settings.html", {"request": request})
+
+
+# include password reset endpoints
+app.include_router(reset_router.router)
