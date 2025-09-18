@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-4 space-y-4">
+  <div class="flex items-center justify-between">
+    <h2 class="text-lg font-semibold">ダッシュボード</h2>
+    <a href="/logout" class="text-sm text-primary">ログアウト</a>
+  </div>
+  <div class="grid gap-3">
+    <div class="rounded-lg border p-4 bg-white">
+      <div class="text-sm text-slate-500">ようこそ</div>
+      <div class="text-lg">{{ user.name }}</div>
+    </div>
+    <div class="rounded-lg border p-4 bg-white">
+      <div class="text-sm text-slate-500">資産推移（ダミー）</div>
+      <div class="h-24 bg-slate-100 rounded"></div>
+    </div>
+    <a href="/lifeplan" class="rounded-lg border p-4 bg-white flex items-center justify-between">
+      <div>
+        <div class="font-medium">ライフプラン作成</div>
+        <div class="text-sm text-slate-500">開始する</div>
+      </div>
+      <div>›</div>
+    </a>
+  </div>
+</div>
+{% endblock %}

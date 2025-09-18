@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" action="/register" class="p-4 space-y-4">
+  {% if error %}
+  <div class="p-3 bg-red-50 text-red-700 rounded">{{ error }}</div>
+  {% endif %}
+  <div class="space-y-2">
+    <label class="text-sm">メール</label>
+    <input type="email" name="email" required class="w-full rounded border p-3" placeholder="you@example.com" />
+  </div>
+  <div class="space-y-2">
+    <label class="text-sm">名前</label>
+    <input type="text" name="name" required class="w-full rounded border p-3" placeholder="山田太郎" />
+  </div>
+  <div class="space-y-2">
+    <label class="text-sm">パスワード</label>
+    <input type="password" name="password" required minlength="8" class="w-full rounded border p-3" placeholder="8文字以上" />
+  </div>
+  <button class="w-full rounded bg-primary text-white py-3">新規登録</button>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-4 space-y-4">
+  <div class="text-center space-y-2">
+    <h2 class="text-xl font-semibold">ようこそ</h2>
+    <p class="text-slate-600 text-sm">ログインまたは新規登録してください</p>
+  </div>
+  <div class="grid grid-cols-2 gap-3">
+    <a href="/login" class="tap inline-flex items-center justify-center rounded-lg bg-primary text-white py-3">ログイン</a>
+    <a href="/register" class="tap inline-flex items-center justify-center rounded-lg bg-white border py-3">新規登録</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.venv/
+venv/
+ENV/
+.env
+.env.*
+
+# SQLite
+*.db
+/data/
+
+# Logs
+logs/
+*.log
+
+# Node
+node_modules/
+
+# Mac
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+.cursor/
