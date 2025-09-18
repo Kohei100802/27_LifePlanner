@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" action="/forgot" class="p-4 space-y-4">
+  {% if sent %}
+  <div class="p-3 bg-green-50 text-green-700 rounded">再設定メール（スタブ）を送信しました。メールをご確認ください。</div>
+  {% endif %}
+  <div class="space-y-2">
+    <label class="text-sm">登録メールアドレス</label>
+    <input type="email" name="email" required class="w-full rounded border p-3" placeholder="you@example.com" />
+  </div>
+  <button class="w-full rounded bg-primary text-white py-3">再設定リンクを送る</button>
+</form>
+{% endblock %}
