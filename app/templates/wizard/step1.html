@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" class="p-4 space-y-4">
+  <h2 class="text-lg font-semibold">Step 1: 基本情報</h2>
+  <input class="w-full border rounded p-3" name="name" placeholder="氏名/ニックネーム" value="{{ data.name or '' }}" />
+  <input class="w-full border rounded p-3" name="family" placeholder="家族構成（自由入力）" value="{{ data.family or '' }}" />
+  <div class="grid grid-cols-3 gap-2">
+    <input class="border rounded p-3" name="birth_year" placeholder="年" value="{{ data.birth_year or '' }}" />
+    <input class="border rounded p-3" name="birth_month" placeholder="月" value="{{ data.birth_month or '' }}" />
+    <input class="border rounded p-3" name="birth_day" placeholder="日" value="{{ data.birth_day or '' }}" />
+  </div>
+  <button class="w-full rounded bg-primary text-white py-3">次へ</button>
+</form>
+{% endblock %}
