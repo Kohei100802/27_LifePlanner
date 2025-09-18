@@ -1,0 +1,12 @@
+{% extends base.html %}
+{% block content %}
+<form method="post" class="p-4 space-y-4">
+  <h2 class="text-lg font-semibold">Step ${i}</h2>
+  <div class="space-y-2">
+    <input class="w-full border rounded p-3" name="field1" placeholder="項目1" value="{{ data.field1 or  }}" />
+    <input class="w-full border rounded p-3" name="field2" placeholder="項目2" value="{{ data.field2 or  }}" />
+    <input class="w-full border rounded p-3" name="field3" placeholder="項目3" value="{{ data.field3 or  }}" />
+  </div>
+  <button class="w-full rounded bg-primary text-white py-3">{{ ${i} < 6 and 次へ or 完了 }}</button>
+</form>
+{% endblock %}
